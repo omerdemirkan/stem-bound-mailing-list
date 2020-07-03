@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Quicksand:wght@300&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="styles.css" />
         <script src="main.js"></script>
         <title>Document</title>
@@ -10,13 +14,30 @@
     <body>
         <div class="main-container">
             <div class="hero-section-container">
-                <img
-                    class="logo"
-                    src="/public/stem-bound-word-logo-white.svg"
-                    alt="stem-bound logo"
-                />
+                <div class="hero-text-box">
+                    <img
+                        class="logo"
+                        src="/public/stem-bound-word-logo-white.svg"
+                        alt="stem-bound logo"
+                    />
+                    <h1>help connect students to opportunities</h1>
+                    <p>
+                        We are a platform that connects students in
+                        underprivileged schools to professionals in STEM fields,
+                        businesses and universities to arrange courses,
+                        internship, mentorship, and research opportunities.
+                    </p>
+                </div>
             </div>
-            <div class="form-section-container"></div>
+            <div class="form-section-container">
+                <form>
+                    <h3>keep in touch</h3>
+                    <h2>Get notified when the beta version is available</h2>
+                    <label for="email">Email</label>
+                    <input type="text" />
+                    <button>Submit</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
