@@ -1,0 +1,25 @@
+html,
+body {
+    margin: 0;
+    font-family: serif;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto calc(400px + 10%);
+}
+
+.hero-section-container {
+    background: linear-gradient(38.55deg, #826efd 0%, #00afd6 100%);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-section-container {
+}
+
+img.logo {
+}
