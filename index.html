@@ -8,7 +8,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
-        <script src="main.js"></script>
+        <script defer src="main.js"></script>
         <title>Document</title>
     </head>
     <body>
@@ -30,12 +30,16 @@
                 </div>
             </div>
             <div class="form-section-container">
-                <form>
+                <form
+                    id="mailing-list-form"
+                    onsubmit="submitForm();return false"
+                >
                     <h3>keep in touch</h3>
                     <h2>Get notified when the beta version is available</h2>
                     <label for="email">Email</label>
-                    <input type="text" />
-                    <button>Submit</button>
+                    <input type="text" id="email-input" />
+                    <button type="submit">Submit</button>
+                    <p id="error-message"></p>
                 </form>
             </div>
         </div>
