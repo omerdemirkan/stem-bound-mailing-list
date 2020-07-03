@@ -126,6 +126,17 @@ img.logo {
     width: calc(450px + 20%);
 }
 
+#sign-up-confirmation-message-box {
+    margin: 100px 0;
+    display: none;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#sign-up-confirmation-message-box h3 {
+    font-size: 1.6rem;
+}
+
 @media (max-width: 1000px) {
     .main-container {
         display: flex;
