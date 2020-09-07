@@ -1,6 +1,6 @@
 {
     "redirects": [
-        { "source": "/t", "destination": "/?a=t" },
-        { "source": "/f", "destination": "/?a=f" }
+        { "source": "/f", "destination": "/?a=1" },
+        { "source": "/t", "destination": "/?a=2" }
     ]
 }
