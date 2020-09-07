@@ -44,7 +44,6 @@ function signUp(email) {
         "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
         //"http://localhost:8080/api/v1/mailing-list",
         {
-            mode: "cors",
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -61,6 +60,11 @@ function signUp(email) {
             return Promise.reject(data);
         }
     });
+}
+
+function getRouterParams(pathname) {
+    pathname = pathname || window.location.pathname;
+    return pathname.split("/").filter((s) => !!s);
 }
 
 function getQueryParamsByString(query) {
