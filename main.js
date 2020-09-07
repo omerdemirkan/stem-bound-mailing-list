@@ -25,7 +25,7 @@ function submitForm() {
             })
             .catch(function (error) {
                 errorMessage.innerText = "An error occured";
-                console.log(error);
+                console.error(error);
             });
     }
 }
@@ -41,16 +41,19 @@ function handleAlreadySubmitted() {
 
 function signUp(email) {
     return fetch(
-        "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/mailing-list",
+        "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
+        //"http://localhost:8080/api/v1/mailing-list",
         {
+            mode: "cors",
             method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email: email }),
+            body: JSON.stringify({ email: email, ...getQueryParamsByString() }),
         }
     ).then(async function (response) {
+        console.log(response);
         const data = await response.json();
         if (response.ok) {
             return data;
@@ -58,4 +61,19 @@ function signUp(email) {
             return Promise.reject(data);
         }
     });
+}
+
+function getQueryParamsByString(query) {
+    query = query || window.location.search;
+    return query
+        ? (/^[?#]/.test(query) ? query.slice(1) : query)
+              .split("&")
+              .reduce((params, param) => {
+                  let [key, value] = param.split("=");
+                  params[key] = value
+                      ? decodeURIComponent(value.replace(/\+/g, " "))
+                      : "";
+                  return params;
+              }, {})
+        : {};
 }
