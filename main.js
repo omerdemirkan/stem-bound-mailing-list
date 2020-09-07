@@ -43,8 +43,8 @@ function handleAlreadySubmitted() {
 
 function signUp(userData) {
     return fetch(
-        // "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
-        "http://localhost:8080/api/v1/mailing-list",
+        "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
+        // "http://localhost:8080/api/v1/mailing-list",
         {
             method: "POST",
             headers: {
