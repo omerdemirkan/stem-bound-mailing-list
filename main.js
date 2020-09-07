@@ -9,17 +9,19 @@ const storedMailingListEmail = localStorage.getItem("mailingListEmail");
 if (storedMailingListEmail) handleAlreadySubmitted();
 
 function submitForm() {
-    const emailInput = form.elements["email-input"].value;
-    console.log("yoo");
-    if (!isValidEmail(emailInput)) {
+    const email = form.elements["email-input"].value;
+    const role = form.elements["user-role"].value;
+    if (!isValidEmail(email)) {
         errorMessage.innerText = "Invalid email";
+    } else if (!role) {
+        errorMessage.innerText = "Please choose a user role";
     } else {
         errorMessage.innerText = "";
         // To simulate an api call.
 
-        signUp(emailInput)
+        signUp({ email, role })
             .then(function (result) {
-                localStorage.setItem("mailingListEmail", emailInput);
+                localStorage.setItem("mailingListEmail", email);
                 handleAlreadySubmitted();
                 console.log(result);
             })
@@ -39,17 +41,17 @@ function handleAlreadySubmitted() {
     signUpConfirmationMessageBox.style = "display: block;";
 }
 
-function signUp(email) {
+function signUp(userData) {
     return fetch(
-        "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
-        //"http://localhost:8080/api/v1/mailing-list",
+        // "https://stem-bound-api-4ea6ol7fuq-uc.a.run.app/api/v1/mailing-list",
+        "http://localhost:8080/api/v1/mailing-list",
         {
             method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email: email, ...getQueryParamsByString() }),
+            body: JSON.stringify({ ...userData, ...getQueryParamsByString() }),
         }
     ).then(async function (response) {
         console.log(response);

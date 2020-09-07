@@ -66,6 +66,10 @@ input:focus {
     outline: none;
 }
 
+.input-box {
+    margin: 20px 0;
+}
+
 .main-container {
     display: grid;
     grid-template-columns: auto calc(200px + 25%);
@@ -120,6 +124,16 @@ input:focus {
     font-size: 1.8rem;
     margin: 10px 0 30px;
     text-align: center;
+}
+
+.radio-box {
+    display: grid;
+    grid-template-columns: 40px auto;
+}
+
+.radio {
+    width: 20px;
+    margin-right: 20px;
 }
 
 img.logo {

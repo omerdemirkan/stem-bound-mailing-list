@@ -35,10 +35,49 @@
                     id="mailing-list-form"
                     onsubmit="submitForm();return false"
                 >
-                    <h3>keep in touch</h3>
-                    <h2>Get notified when the beta version is available</h2>
-                    <label for="email">Email</label>
-                    <input type="text" id="email-input" />
+                    <div class="input-box">
+                        <h3>keep in touch</h3>
+                        <h2>Get notified when the beta version is available</h2>
+                        <label for="email">Email</label>
+                        <input type="text" id="email-input" />
+                    </div>
+
+                    <div class="input-box">
+                        <label for="user-role">I am a </label>
+                        <div class="radio-box">
+                            <input
+                                type="radio"
+                                id="SCHOOL_OFFICIAL"
+                                name="user-role"
+                                value="SCHOOL_OFFICIAL"
+                                class="radio"
+                            />
+                            <label for="SCHOOL_OFFICIAL">School Official</label>
+                        </div>
+                        <div class="radio-box">
+                            <input
+                                type="radio"
+                                id="STUDENT"
+                                name="user-role"
+                                value="STUDENT"
+                                class="radio"
+                            />
+                            <label for="STUDENT">Student</label>
+                        </div>
+                        <div class="radio-box">
+                            <input
+                                type="radio"
+                                id="INSTRUCTOR"
+                                name="user-role"
+                                value="INSTRUCTOR"
+                                class="radio"
+                            />
+                            <label for="INSTRUCTOR"
+                                >Prospective Instructor</label
+                            >
+                        </div>
+                    </div>
+
                     <button type="submit">Submit</button>
                     <p id="error-message"></p>
                 </form>
