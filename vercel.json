@@ -2,6 +2,7 @@
     "redirects": [
         { "source": "/f", "destination": "/?a=f" },
         { "source": "/t", "destination": "/?a=t" },
-        { "source": "/h", "destination": "/?a=h" }
+        { "source": "/h", "destination": "/?a=h" },
+        { "source": "/e", "destination": "/?a=e" }
     ]
 }
